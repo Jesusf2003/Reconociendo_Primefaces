@@ -2,7 +2,7 @@ package model;
 
 public class ProductModelo {
 
-	private String codprod;
+	private int codprod;
 	
 	private String nameprod;
 	
@@ -14,7 +14,7 @@ public class ProductModelo {
 		super();
 	}
 
-	public ProductModelo(String codprod, String nameprod, double price, String category) {
+	public ProductModelo(int codprod, String nameprod, double price, String category) {
 		super();
 		this.codprod = codprod;
 		this.nameprod = nameprod;
@@ -22,11 +22,11 @@ public class ProductModelo {
 		this.category = category;
 	}
 
-	public String getCodprod() {
+	public int getCodprod() {
 		return codprod;
 	}
 
-	public void setCodprod(String codprod) {
+	public void setCodprod(int codprod) {
 		this.codprod = codprod;
 	}
 
