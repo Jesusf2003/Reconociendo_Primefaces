@@ -1,18 +1,30 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
-
-	<h:head>
-		<title>Primefaces</title>
-		<meta name="viewport" content="width=device-width, user-scalable=no"></meta>
-	</h:head>
-	<h:body>
-		<head>
-			<h1>Hola mundo</h1>
-		</head>
-	</h:body>
+<h:head>
+	<title>Data Grid</title>
+</h:head>
+<h:body>
+	<h:form>
+		<p:dataGrid var="prod" value="#{productoBean.listProd}" rows="12" paginator="true" columns="3" id="productData"
+			paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+			rowsPerPageTemplate="6,12,16">
+			<f:facet name="header">
+            	Lista de productos
+        	</f:facet>
+			<p:panel header="#{prod.codprod}" style="text-align:center">
+				<h:panelGrid columns="1" style="width:100%">
+					
+					<h:outputText value="#{prod.nameprod}" />
+					
+					<h:outputText value="#{prod.price} | #{prod.category}" />
+				
+				</h:panelGrid>
+			</p:panel>
+		</p:dataGrid>
+	</h:form>
+</h:body>
 </html>

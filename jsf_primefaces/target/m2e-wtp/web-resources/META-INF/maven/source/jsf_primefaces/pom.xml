@@ -8,7 +8,6 @@
 	<groupId>source</groupId>
 	<artifactId>jsf_primefaces</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
 
 	<name>jsf_primefaces Maven Webapp</name>
 	<!-- FIXME change it to the project's website -->
@@ -57,12 +56,7 @@
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
-			<version>10.0.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.primefaces.extensions</groupId>
-			<artifactId>primefaces-extensions</artifactId>
-			<version>10.0.6</version>
+			<version>7.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -104,6 +98,11 @@
 			<groupId>com.squareup.okhttp3</groupId>
 			<artifactId>okhttp</artifactId>
 			<version>4.9.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.3.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
@@ -162,4 +161,5 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+	<packaging>war</packaging>
 </project>
