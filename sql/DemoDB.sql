@@ -23,5 +23,5 @@ INSERT INTO producto(nomprod, imgprod, priceprod, categoryprod) VALUES
 	('Vizzio', 'snack', 1.50, 'Snacks'),
 	('Manty', 'cocina', 3.00, 'Cocina'),
 	('Gloria', 'cocina', 3.00, 'Cocina');
-	
+
 SELECT * FROM producto;

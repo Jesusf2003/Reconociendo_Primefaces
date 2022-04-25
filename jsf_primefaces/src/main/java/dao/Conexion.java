@@ -8,8 +8,8 @@ public class Conexion {
 	
 	public static Connection conectar() throws Exception {
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			cnx = DriverManager.getConnection("jdbc:mysql://localhost:3306/DemoDB", "root", "administrador");
+			Class.forName("org.postgresql.Driver");
+			cnx = DriverManager.getConnection("jdbc:postgresql://localhost:5432/DemoDB", "postgres", "pgsql1234");
 		} catch (ClassNotFoundException ex) {
 			System.out.println(ex.getClass().getName() + ": "+ ex.getMessage());
 		}

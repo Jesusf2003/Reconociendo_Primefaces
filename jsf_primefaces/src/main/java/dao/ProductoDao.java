@@ -15,7 +15,7 @@ public class ProductoDao extends Conexion {
 		this.conectar();
 		try {
 			Statement st = this.getCnx().createStatement();
-			ResultSet rs = st.executeQuery("SELECT * FROM PRODUCTO");
+			ResultSet rs = st.executeQuery("SELECT * FROM producto;");
 			
 			listar = new ArrayList();
 			
@@ -23,7 +23,6 @@ public class ProductoDao extends Conexion {
 				prod = new ProductModelo();
 				prod.setCodprod(rs.getInt("codprod"));
 				prod.setNameprod(rs.getString("nomprod"));
-				prod.setImgprod(rs.getString("imgprod"));
 				prod.setPrice(rs.getDouble("priceprod"));
 				prod.setCategory(rs.getString("categoryprod"));
 				
