@@ -8,8 +8,35 @@
 	<title>Data Grid</title>
 </h:head>
 <h:body>
+
+	<style type="text/css">
+		.value {
+			font-weight: bold;
+		}
+		
+		.ui-carousel {
+			margin-bottom: 20px
+		}
+	</style>
+	
 	<h:form>
-		<p:dataGrid var="prod" value="#{productoBean.listProd}" rows="12" paginator="true" columns="3" id="productData"
+		<p:carousel value="#{productoBean.listProd}" headerText="Responsive" var="prod" itemStyle="text-align:center" responsive="true">
+			<p:panelGrid columns="1" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid"
+							styleClass="ui-panelgrid-blank" headerText="Tabs">
+				<f:facet name="header">
+					<h:outputText value="ID: #{prod.codprod}" />
+					<p:graphicImage name="resources/#{prod.codprod}_#{prod.imgprod}."/>
+				</f:facet>
+				<h:outputText value="Categorías: #{prod.category}"/>
+				<h:outputText value="#{prod.nameprod}" />
+				<h:outputText value="S/. #{prod.price}" />
+			</p:panelGrid>
+		</p:carousel>
+	</h:form>
+	<div style="height: 50px; background-color: #f8f8f8; margin-bottom: 20px"></div>
+	<h:form>
+		<p:dataGrid var="prod" value="#{productoBean.listProd}" rows="12"
+			paginator="true" columns="3" id="productData" paginatorPosition="bottom"
 			paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 			rowsPerPageTemplate="6,12,16">
 			<f:facet name="header">
@@ -17,11 +44,8 @@
         	</f:facet>
 			<p:panel header="#{prod.codprod}" style="text-align:center">
 				<h:panelGrid columns="1" style="width:100%">
-					
 					<h:outputText value="#{prod.nameprod}" />
-					
-					<h:outputText value="#{prod.price} | #{prod.category}" />
-				
+					<h:outputText value="S/. #{prod.price} | Cat. #{prod.category}" />
 				</h:panelGrid>
 			</p:panel>
 		</p:dataGrid>

@@ -8,17 +8,20 @@ public class ProductModelo {
 	
 	private double price;
 	
+	private String imgprod;
+	
 	private String category;
 
 	public ProductModelo() {
 		super();
 	}
 
-	public ProductModelo(int codprod, String nameprod, double price, String category) {
+	public ProductModelo(int codprod, String nameprod, double price, String imgprod, String category) {
 		super();
 		this.codprod = codprod;
 		this.nameprod = nameprod;
 		this.price = price;
+		this.imgprod = imgprod;
 		this.category = category;
 	}
 
@@ -44,6 +47,14 @@ public class ProductModelo {
 
 	public void setPrice(double price) {
 		this.price = price;
+	}
+
+	public String getImgprod() {
+		return imgprod;
+	}
+
+	public void setImgprod(String imgprod) {
+		this.imgprod = imgprod;
 	}
 
 	public String getCategory() {

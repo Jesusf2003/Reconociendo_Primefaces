@@ -11,10 +11,8 @@ public class ProductoDao extends Conexion {
 
 	public List<ProductModelo> listar() throws Exception {
 		List<ProductModelo> listar = null;
-		
 		ProductModelo prod;
 		this.conectar();
-		
 		try {
 			Statement st = this.getCnx().createStatement();
 			ResultSet rs = st.executeQuery("SELECT * FROM PRODUCTO");
@@ -25,6 +23,7 @@ public class ProductoDao extends Conexion {
 				prod = new ProductModelo();
 				prod.setCodprod(rs.getInt("codprod"));
 				prod.setNameprod(rs.getString("nomprod"));
+				prod.setImgprod(rs.getString("imgprod"));
 				prod.setPrice(rs.getDouble("priceprod"));
 				prod.setCategory(rs.getString("categoryprod"));
 				

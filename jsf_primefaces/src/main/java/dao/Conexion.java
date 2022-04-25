@@ -8,8 +8,8 @@ public class Conexion {
 	
 	public static Connection conectar() throws Exception {
 		try {
-			Class.forName("org.postgresql.Driver");
-			cnx = DriverManager.getConnection("jdbc:postgresql://localhost:5432/DemoDB", "postgres", "pgsql1234");
+			Class.forName("com.mysql.jdbc.Driver");
+			cnx = DriverManager.getConnection("jdbc:mysql://localhost:3306/DemoDB", "root", "administrador");
 		} catch (ClassNotFoundException ex) {
 			System.out.println(ex.getClass().getName() + ": "+ ex.getMessage());
 		}
@@ -26,7 +26,7 @@ public class Conexion {
 	public static void main(String[] args) throws Exception{
 		conectar();
 		if (cnx != null) {
-			System.out.println("Conectado con Postgre");
+			System.out.println("Conectado con MySQL");
 		} else {
 			System.out.println("Falló en conectar");
 		}
