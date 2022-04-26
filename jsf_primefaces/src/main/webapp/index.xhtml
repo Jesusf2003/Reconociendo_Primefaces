@@ -26,6 +26,9 @@
 				<f:facet name="header">
 					<h:outputText value="ID: #{prod.codprod}" />
 				</f:facet>
+				
+				<h:graphicImage value="/resources/#{prod.codprod}_#{prod.imgprod}.png" />
+				
 				<h:outputText value="Categorías: #{prod.category}"/>
 				<h:outputText value="#{prod.nameprod}" />
 				<h:outputText value="S/. #{prod.price}" />
@@ -45,6 +48,7 @@
         	</f:facet>
 			<p:panel header="#{prod.codprod}" style="text-align:center">
 				<h:panelGrid columns="1" style="width:100%">
+					<h:graphicImage value="/resources/#{prod.codprod}_#{prod.imgprod}.png" />
 					<h:outputText value="#{prod.nameprod}" />
 					<h:outputText value="S/. #{prod.price} | Cat. #{prod.category}" />
 				</h:panelGrid>

@@ -23,6 +23,7 @@ public class ProductoDao extends Conexion {
 				prod = new ProductModelo();
 				prod.setCodprod(rs.getInt("codprod"));
 				prod.setNameprod(rs.getString("nomprod"));
+				prod.setImgprod(rs.getString("imgprod"));
 				prod.setPrice(rs.getDouble("priceprod"));
 				prod.setCategory(rs.getString("categoryprod"));
 				

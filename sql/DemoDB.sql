@@ -1,18 +1,14 @@
-CREATE database DemoDB;
-
-use DemoDB;
-
-DROP TABLE producto;
 
 create table producto(
-	codprod		int not null primary key auto_increment,
+	codprod		serial not null primary key,
 	nomprod		varchar(80),
 	imgprod		varchar(20),
 	priceprod	decimal(5,2),
 	categoryprod	varchar(50)
-);
+)
 
-INSERT INTO producto(nomprod, imgprod, priceprod, categoryprod) VALUES
+insert into producto(nomprod, imgprod, priceprod, categoryprod)
+values
 	('Doritos', 'snack', 1.00, 'Snacks'),
 	('Primor', 'cocina', 5.50, 'Cocina'),
 	('Tondero', 'cocina', 4.50, 'Cocina'),
@@ -24,4 +20,4 @@ INSERT INTO producto(nomprod, imgprod, priceprod, categoryprod) VALUES
 	('Manty', 'cocina', 3.00, 'Cocina'),
 	('Gloria', 'cocina', 3.00, 'Cocina');
 
-SELECT * FROM producto;
+select * from producto;

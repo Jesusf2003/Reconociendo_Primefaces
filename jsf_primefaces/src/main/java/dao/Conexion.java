@@ -26,7 +26,7 @@ public class Conexion {
 	public static void main(String[] args) throws Exception{
 		conectar();
 		if (cnx != null) {
-			System.out.println("Conectado con MySQL");
+			System.out.println("Conectado con PostgreSQL");
 		} else {
 			System.out.println("Falló en conectar");
 		}

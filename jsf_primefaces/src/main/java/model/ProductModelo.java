@@ -6,9 +6,9 @@ public class ProductModelo {
 	
 	private String nameprod;
 	
-	private double price;
-	
 	private String imgprod;
+	
+	private double price;
 	
 	private String category;
 
@@ -16,12 +16,12 @@ public class ProductModelo {
 		super();
 	}
 
-	public ProductModelo(int codprod, String nameprod, double price, String imgprod, String category) {
+	public ProductModelo(int codprod, String nameprod, String imgprod, double price, String category) {
 		super();
 		this.codprod = codprod;
 		this.nameprod = nameprod;
-		this.price = price;
 		this.imgprod = imgprod;
+		this.price = price;
 		this.category = category;
 	}
 
@@ -41,20 +41,20 @@ public class ProductModelo {
 		this.nameprod = nameprod;
 	}
 
-	public double getPrice() {
-		return price;
-	}
-
-	public void setPrice(double price) {
-		this.price = price;
-	}
-
 	public String getImgprod() {
 		return imgprod;
 	}
 
 	public void setImgprod(String imgprod) {
 		this.imgprod = imgprod;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
 	}
 
 	public String getCategory() {
