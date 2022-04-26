@@ -17,6 +17,21 @@
 		.ui-carousel {
 			margin-bottom: 20px
 		}
+		
+		.price-style {
+			color: red;
+		}
+		.left {
+			height:50%;
+			float:left;
+			width:50%;
+		}
+		
+		.right {
+			height:50%;
+			float:right;
+			width:50%;
+		}
 	</style>
 	
 	<h:form>
@@ -31,7 +46,7 @@
 				
 				<h:outputText value="Categorías: #{prod.category}"/>
 				<h:outputText value="#{prod.nameprod}" />
-				<h:outputText value="S/. #{prod.price}" />
+				<h:outputText styleClass="price-style" value="S/. #{prod.price}" />
 			</p:panelGrid>
 		</p:carousel>
 	</h:form>
@@ -50,10 +65,36 @@
 				<h:panelGrid columns="1" style="width:100%">
 					<h:graphicImage value="/resources/#{prod.codprod}_#{prod.imgprod}.png" />
 					<h:outputText value="#{prod.nameprod}" />
-					<h:outputText value="S/. #{prod.price} | Cat. #{prod.category}" />
+					<h:outputText styleClass="price-style" value="S/. #{prod.price} " />Cat. #{prod.category}
+					<p:commandButton title="Agregar" oncomplete="PF('prodDialog').show()"></p:commandButton>
 				</h:panelGrid>
 			</p:panel>
 		</p:dataGrid>
+		
+		<p:dialog 	id="dlgProd" widgetVar="prodDialog"
+					modal="true" showEffect="fade"
+					hideEffect="fade" resizable="false">
+			
+			<p:outputPanel style="text-align:center;">
+				
+				<div class="container">
+					<div class="left">
+						<h:graphicImage value="/resources/Comprando.jpg" width="50%" height="50%" />
+					</div>
+					<div class="right">
+						<p:panelGrid  columns="1" columnClasses="label,value">
+				
+							<h:outputText value="¿Cómo quieres que te entreguemos el pedido?" />
+					
+							<h:outputText value="Retiro en tienda" />
+					
+							<h:outputText value="Despacho a domicilio" />
+					
+						</p:panelGrid>
+					</div>
+				</div>
+			</p:outputPanel>
+		</p:dialog>
 	</h:form>
 </h:body>
 </html>
