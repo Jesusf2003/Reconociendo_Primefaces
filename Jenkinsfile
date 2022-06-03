@@ -8,6 +8,7 @@ node{
         def scannerHome = tool name:'sonarqubetest', type: 'hudson.plugins.sonar.SonarRunnerInstallation';
         withSonarQubeEnv('sonarqubetest'){
 	    sh "${scannerHome}/bin/sonar-scanner -D sonar.projectKey=sonarqubetest"
+	    sh 'mvn clean package'
         }
     }
 }
