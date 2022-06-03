@@ -7,11 +7,11 @@ node{
     }
     stage('SonarQube analysis'){
         def mvn = tool 'Default Maven';
-        def scannerHome = tool name: 'sonar_scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation';
+        def scannerHome = tool name: 'sonarqubetest', type: 'hudson.plugins.sonar.SonarRunnerInstallation';
 	withMaven {
      	    sh "mvn clean verify"
     	}
-        withSonarQubeEnv('sonar_scanner'){
+        withSonarQubeEnv('sonarqubetest'){
             sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar'
             sh "${mvn}/bin/mvn clean verify sonar:sonar -D sonar.projectKey=sonarqubetest"
         }
