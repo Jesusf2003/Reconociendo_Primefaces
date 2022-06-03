@@ -7,6 +7,7 @@ node{
     stage('SonarQube analysis'){
         def scannerHome = tool name: 'sonarqubetest', type: 'hudson.plugins.sonar.SonarRunnerInstallation';
         withSonarQubeEnv('sonarqubetest'){
+	    mklink "C:\Program Files\Git\bin\nohup.exe"
 	    sh "${scannerHome}/bin/sonar-scanner -D sonar.projectKey=sonarqubetest"
         }
     }
