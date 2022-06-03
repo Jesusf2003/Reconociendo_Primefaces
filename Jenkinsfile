@@ -5,7 +5,7 @@ node{
         url: 'https://github.com/Jesusf2003/Reconociendo_Primefaces.git'
     }
     stage('SonarQube analysis'){
-        def scannerHome = tool 'sonarqubetest';
+        def scannerHome = tool name:'sonarqubetest', type: 'hudson.plugins.sonar.SonarRunnerInstallation';
         withSonarQubeEnv('sonarqubetest'){
 	    sh "${scannerHome}/bin/sonar-scanner -D sonar.projectKey=sonarqubetest"
         }
