@@ -6,7 +6,7 @@ node{
         gitToolName: 'Default'
     }
     stage('SonarQube analysis'){
-        def scannerHome = tool 'SonarScanner';
+        def scannerHome = tool 'sonarqubetest';
         withSonarQubeEnv('sonarqubetest'){
 	    sh "${scannerHome}/bin/sonar-scanner"
         }
