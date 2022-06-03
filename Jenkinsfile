@@ -8,7 +8,7 @@ node{
     stage('SonarQube analysis'){
         def scannerHome = tool 'sonarqubetest', type: 'hudson.plugins.sonar.SonarRunnerInstallation';
         withSonarQubeEnv('sonarqubetest'){
-	    sh "${scannerHome}/bin/sonarqubetest -D sonar.projectKey=sonarqubetest"
+	    sh "${scannerHome}/bin/sonar-scanner -D sonar.projectKey=sonarqubetest"
         }
     }
 }
