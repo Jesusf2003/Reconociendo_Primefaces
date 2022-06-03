@@ -6,7 +6,7 @@ node{
         gitToolName: 'Default'
     }
     stage('SonarQube analysis'){
-        def scannerHome = tool name: 'sonarqubetest';
+        def scannerHome = tool name: 'sonarqubetest', type: 'hudson.plugins.sonar.SonarRunnerInstallation';
         withSonarQubeEnv('sonarqubetest'){
             sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar'
             sh "${mvn}/bin/mvn clean verify sonar:sonar -D sonar.projectKey=sonarqubetest -d sonar.login=6345b35d62cea7ce8eaa8b66f139f0e5273244ea"
